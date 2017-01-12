@@ -6,22 +6,18 @@ const knex = require('../db/knex');
 const env = 'development';
 
 
-
-// Gets home page with seed data
-
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
+  res.render('index', { title: 'Galvanize Reads' });
 });
 
 
 router.get('/book', function(req, res, next) {
   return knex('book')
         .then(book => {
-          console.log(book);
-            res.render('book', {
-              book : book
-            });
+        res.render('book', {
+            book : book
         });
+    });
 });
 
 // // New form to add task

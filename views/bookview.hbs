@@ -1,37 +1,35 @@
 <div class="row">
-<div class="col l12">
- <button class=" lime darken-3 waves-effect waves-light btn"><a href="/addbook">Add New Books Here</a></button>
- <button class=" lime darken-3 waves-effect waves-light btn"><a href="/book">See All Books Here</a></button>
- <button class=" lime darken-3 waves-effect waves-light btn"><a href="/author">See All Authors Here</a></button>
-</div>
+  <button class=" lime darken-3 waves-effect waves-light btn-large left-align "><a class="white-text" href="/addbook">Add New Books Here</a></button>
+   <button class="lime darken-3 waves-effect waves-light btn-large center-align "><a class="white-text" href="/book">See Books Here </a></button>
+   <button class="lime darken-3 waves-effect waves-light btn-large right-align "><a class="white-text" href="/author">See Authors Here</a></button>
 </div>
 <ul>
- <div class="container">
-  <div class="row">
-   <div class="col l12 m8">
-    <div class="card horizontal">
-     <div class="card-image">
-       <img src="{{book.cover_url}}">
-       </div>
-      <div class="card-stacked">
-       <div class="card-content">
-         <h4>{{book.title}}</h4>
-         <h5>{{book.first_name}}</h5>
-         <h6>{{book.genre}}</h6>
-         <p>{{book.description}}</p>
-       </div>
-       <div class="card-action">
-          <form action="/deletebook/{{book.id}}" method="post">
-              <button class=" lime darken-3 waves-effect waves-light btn left" type="submit">Delete</button>
-              </form>
-              <div class="row">
-              <div class="col s4">
-            <a href="/editbook/{{this.id}}"><button class="lime darken-3 waves-effect waves-light btn" type="submit">Edit</button></a>
-          </form>
-        </div>
-       </div>
-      </div>
-    </div>
-   </div>
-  </div>
- </ul>
+    <div class="container">
+        <div class="row">
+            <div class="col l12 m8">
+                <div class="card horizontal">
+                    <div class="card-image">
+                        <img src="{{book.cover_url}}">
+                    </div>
+                    <div class="card-stacked">
+                        <div class="card-content">
+                            <h4>{{book.title}}</h4>
+                            <h5>{{book.first_name}}</h5>
+                            <h6>{{book.genre}}</h6>
+                            <p>{{book.description}}</p>
+                        </div>
+                        <div class="card-action">
+                            <form action="/bookview/{{book.id}}?_method=delete" method="post">
+                                <button class=" lime darken-3 waves-effect waves-light btn left" type="submit">Delete</button>
+                            </form>
+                            <div class="row">
+                                <div class="col s4">
+                                    <a href="/bookview/{{book.id}}/editbook"><button class="lime darken-3 waves-effect waves-light btn" type="submit">Edit</button></a>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+          </div>
+</ul>

@@ -19,8 +19,9 @@
          <h6>{{this.genre}}</h6>
          <p>{{this.description}}</p>
        </div>
+      <a href="/bookview/{{this.id}}">view book</a>
        <div class="card-action">
-          <form action="/delete/{{id}}?_method=delete" method="post">
+          <form action="/bookview/{{id}}">
               <button class=" lime darken-3 waves-effect waves-light btn left" type="submit">Delete</button>
               </form>
               <div class="row">
@@ -32,6 +33,6 @@
       </div>
     </div>
    </div>
-  </div>
+ </div>
  </ul>
 {{/each}}
